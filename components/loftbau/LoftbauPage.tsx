@@ -174,6 +174,11 @@ const content: Record<Locale, Content> = {
           detail: "Stan deweloperski do odbioru. Glazura, instalacje wod-kan i elektryczne, malowanie.",
           image: "/realizacja-3.jpg",
         },
+        {
+          title: "Łazienka — kamienica, Kraków",
+          detail: "Pełny zakres od stanu surowego. Glazura, instalacje, wykończenie.",
+          image: "/realizacja-4.jpg",
+        },
       ],
     },
     beforeAfter: {
@@ -337,6 +342,11 @@ const content: Record<Locale, Content> = {
           title: "Bathroom — developer-condition flat",
           detail: "From shell to handover. Tiling, plumbing, electrical, spray painting.",
           image: "/realizacja-3.jpg",
+        },
+        {
+          title: "Bathroom — tenement building, Kraków",
+          detail: "Full scope from shell condition. Tiling, installations, finishing.",
+          image: "/realizacja-4.jpg",
         },
       ],
     },
@@ -507,7 +517,21 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_10%,rgba(216,203,184,0.25),transparent_38%),linear-gradient(165deg,#18181b_0%,#101011_55%,#0d0d0e_100%)]" />
+          {/* Zdjęcie tła */}
+          <Image
+            src="/realizacja-4.jpg"
+            fill
+            priority
+            className="object-cover opacity-30"
+            sizes="100vw"
+            alt=""
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(165deg,rgba(15,15,16,0.85)_0%,rgba(12,12,13,0.75)_50%,rgba(10,10,11,0.92)_100%)]" />
+          {/* Warm accent top-right */}
+          <div className="absolute right-0 top-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(216,203,184,0.18)_0%,transparent_65%)]" />
+          {/* Warm glow bottom-left */}
+          <div className="absolute -bottom-20 -left-20 h-[350px] w-[350px] rounded-full bg-[radial-gradient(circle,rgba(180,155,110,0.12)_0%,transparent_65%)]" />
           <motion.div
             className="absolute -right-16 top-20 h-56 w-56 rounded-full border border-white/15 bg-white/5 blur-2xl"
             animate={{ y: [0, -14, 0] }}
@@ -635,7 +659,9 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
               <article
                 key={project.title}
                 className={`relative overflow-hidden rounded-3xl border border-white/10 ${
-                  index === 0 ? "md:col-span-7 min-h-[330px]" : "md:col-span-5 min-h-[250px]"
+                  index === 0 || index === 3
+                    ? "md:col-span-7 min-h-[330px]"
+                    : "md:col-span-5 min-h-[260px]"
                 } bg-[linear-gradient(135deg,#1f2023_0%,#141416_70%)]`}
               >
                 {project.image && (
