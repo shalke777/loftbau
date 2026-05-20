@@ -247,8 +247,8 @@ const content: Record<Locale, Content> = {
     },
     contact: {
       eyebrow: "Kontakt",
-      title: "Napisz lub zadzwoń.",
-      body: "Opisz krótko zakres prac i lokalizację. Odpowiadamy zwykle w ciągu jednego dnia roboczego. Wycena jest bezpłatna.",
+      title: "Zapytaj mistrza.",
+      body: "Opisz swoją łazienkę, harmonogram i oczekiwania. Wrócimy z konkretnym planem technicznym i wyceną. Konsultacja bezpłatna.",
     },
     structuredDataDescription:
       "LOFTBAU Paweł Szalecki — firma wykonawcza specjalizująca się w łazienkach. Mistrz glazurnik. Kraków i okolice.",
@@ -408,8 +408,8 @@ const content: Record<Locale, Content> = {
     },
     contact: {
       eyebrow: "Contact",
-      title: "Write or call.",
-      body: "Briefly describe the scope and location. We usually reply within one working day. Quotes are free of charge.",
+      title: "Ask the master.",
+      body: "Describe your bathroom, timeline and expectations. We'll come back with a concrete technical plan and quote. Free consultation.",
     },
     structuredDataDescription:
       "LOFTBAU Paweł Szalecki — bathroom execution company. Master tiler. Kraków and nearby.",
