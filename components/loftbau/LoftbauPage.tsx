@@ -28,6 +28,23 @@ type Content = {
     ctaSecondary: string;
     services: string[];
   };
+  positioning: {
+    eyebrow: string;
+    title: string;
+    body: string;
+  };
+  specialization: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    items: string[];
+  };
+  executionSystem: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    steps: { num: string; title: string; desc: string }[];
+  };
   showcase: {
     eyebrow: string;
     title: string;
@@ -84,7 +101,7 @@ const content: Record<Locale, Content> = {
     nav: {
       projects: "Projekty",
       process: "Proces",
-      materials: "Materialy",
+      materials: "System",
       contact: "Kontakt",
       consultation: "Konsultacja",
     },
@@ -93,129 +110,159 @@ const content: Record<Locale, Content> = {
       en: "ENG",
     },
     hero: {
-      eyebrow: "Premium wykonczen wnętrz w Krakowie",
-      title: "Cinematic łazienki. Architektoniczne wykonczenie. Premium craft od LOFTBAU Krakow.",
-      body: "Projektujemy i realizujemy luksusowe lazienki oraz powierzchnie premium dla klientow oczekujacych precyzji detalu, klasy materialow i ponadczasowej atmosfery.",
-      ctaPrimary: "Umow konsultacje premium",
+      eyebrow: "Master Glazurnik — Kraków",
+      title: "Perfekcyjne wykonanie łazienek premium w rzeczywistości.",
+      body: "Pełna odpowiedzialność za realizację łazienek. Od przygotowania, hydroizolacji, glazury do integracji instalacji i wykończenia. Wykonawca, nie projektant.",
+      ctaPrimary: "Umów konsultację",
       ctaSecondary: "Zobacz portfolio",
       services: [
-        "Luksusowe lazienki",
-        "Wielkoformatowy montaz plytek",
-        "Powierzchnie z mikrocementu",
-        "Architektoniczne wykonczenia wnętrz",
+        "Mistrz glazurnictwa",
+        "Systemy łazienek premium",
+        "Wykonanie end-to-end",
+        "Precisja techniczna",
+      ],
+    },
+    positioning: {
+      eyebrow: "Nasza misja",
+      title: "Nie projektujemy. Realizujemy.",
+      body: "LOFTBAU to atelier wykonańskiego rzemiosła. Bierzemy pełną odpowiedzialność za finalny wynik fizyczny. Każda łazienka to system techniczno-estetyczny, a my kontrolujemy każdy element od przygotowania podłoża do ostatniego szlifu.",
+    },
+    specialization: {
+      eyebrow: "Specjalizacja",
+      title: "Luxury bathroom execution w najwyższym standardzie.",
+      body: "Nasze doświadczenie:",
+      items: [
+        "Wykonanie łazienek premium — od A do Z",
+        "Glazurnictwo precyzyjne (wszystkie formaty, w tym XXL)",
+        "Waterproofing i systemy hydrauliczne",
+        "Elektyka i instalacja w systemie łazienki",
+        "Gładzie natryskowe i malowania natryskowe",
+        "Wykończenia na najwyższym poziomie",
+      ],
+    },
+    executionSystem: {
+      eyebrow: "System realizacji",
+      title: "Łazienka jako system techniczny.",
+      body: "Każdy etap ma znaczenie. Kontrolujemy wszystko.",
+      steps: [
+        { num: "01", title: "Przygotowanie", desc: "Analiza warunków, przygotowanie podłoża, planowanie systemu." },
+        { num: "02", title: "Hydroizolacja", desc: "Pełna ochrona wodoszczelna — system bezpieczeństwa łazienki." },
+        { num: "03", title: "Glazura", desc: "Precyzyjna instalacja płytek — wszystkie formaty, perfekcyjne fuge." },
+        { num: "04", title: "Instalacja", desc: "Integracja wyposażenia, armatur, oświetlenia i systemów." },
+        { num: "05", title: "Wykończenie", desc: "Ostateczna kalibracja detali, czyszczenie, odbiór techniczny." },
       ],
     },
     showcase: {
-      eyebrow: "Premium Showcase",
-      title: "Wybrane realizacje dla klientow, ktorzy inwestuja w jakosc designu, nie kompromis.",
-      body: "Kazdy projekt laczy dyscypline architektoniczna, material premium i precyzyjna instalacje. Efektem jest spokojna, luksusowa jakosc przestrzeni.",
+      eyebrow: "Realizacje",
+      title: "Rzeczywistości. Bez renderów.",
+      body: "Tylko skończone, zabudowane łazienki. Dokumentacja z budowy i finału. Dowód precyzji wykonania.",
       projectLabel: "Projekt",
       items: [
         {
-          title: "Lazienka Penthouse",
-          detail: "Wloska symetria slabow, ukryte odwodnienia liniowe i oswietlenie klasy gallery.",
+          title: "Penthouse | Wielkoformatowy system",
+          detail: "Płytki 1,5m × 2m, rozwiązanie fugi ukryte, integracja oświetlenia — pełna realizacja systemu.",
         },
         {
-          title: "Signature Microcement",
-          detail: "Bezszwowa powierzchnia mineralna o matowej glebi i perfekcyjnych przejsciach naroznych.",
+          title: "Rezydencja | Ceramic XXL + Hydroizolacja",
+          detail: "System zaawansowanej hydroizolacji, montaż płytek giganta, perfekcja granic i przejść.",
         },
         {
-          title: "Architektoniczne SPA",
-          detail: "Ciepla paleta kamienia, duze formaty i kompozycje umywalkowe na wymiar.",
+          title: "Apartament | Precision Tiling System",
+          detail: "Naturalne kamienie, precyzyjne fige, integracja z systemem grzewczym podłogi.",
         },
       ],
     },
     beforeAfter: {
       eyebrow: "Przed / Po",
-      title: "Mierzalna transformacja z eleganckim, kontrolowanym kontrastem.",
-      body: "Porownanie jakosci przestrzeni przed i po wdrozeniu naszego premium procesu remontowego.",
-      beforeLabel: "Rozproszony uklad, wizualny chaos i niska spojnosc materialow.",
-      afterLabel: "Monolityczna geometria, dotykowa harmonia i hotelowa jakosc detalu.",
+      title: "Różnica między amatorą a mistrzem.",
+      body: "Jakość wykonania zmienia wszystko. Perfekcja fugi, precyzja płytek, integracja systemów — to widać.",
+      beforeLabel: "Niedbałe przejścia, asymetryczne fuge, widoczne wady.",
+      afterLabel: "Monolityczna precyzja, doskonałe linie, hotelowy standard.",
       beforeBadge: "Przed",
       afterBadge: "Po",
-      ariaLabel: "Porownanie przed i po",
+      ariaLabel: "Porównanie przed i po",
     },
     process: {
-      eyebrow: "Sciezka Klienta",
-      title: "Proces klasy studio od pierwszego briefu do finalnego odbioru.",
-      body: "Transparentne etapy, zdyscyplinowana realizacja i bezposrednia komunikacja przez caly projekt.",
+      eyebrow: "Ścieżka klienta",
+      title: "Od konsultacji do odbioru — pełna kontrola.",
+      body: "Transparentne etapy, zdyscyplinowana realizacja i bezpośrednia komunikacja przez cały projekt.",
       items: [
         {
           step: "01",
-          title: "Brief Przestrzeni",
-          detail: "Cele projektowe, materialy, logika swiatla i precyzja budzetu.",
+          title: "Konsultacja techniczna",
+          detail: "Ocena warunków, specyfikacja systemu, harmonogram, budżet precyzyjnie.",
         },
         {
           step: "02",
-          title: "Doprecyzowanie Techniczne",
-          detail: "Pomiary, pakiet detali i architektura harmonogramu.",
+          title: "Pomiar i planowanie",
+          detail: "Pomiary precyzyjne, plan hydro, specyfikacja materiałów, harmonogram realizacji.",
         },
         {
           step: "03",
-          title: "Realizacja Premium",
-          detail: "Dostarczenie wykonawcze z nadzorem w standardzie architektonicznym.",
+          title: "Realizacja i nadzór",
+          detail: "Każdy etap kontrolowany. Hydro, glazura, instalacja — standard mistrza.",
         },
         {
           step: "04",
-          title: "Finalna Kuracja",
-          detail: "Kontrola jakosci, kalibracja wykonczenia i rytual przekazania.",
+          title: "Odbór i dokumentacja",
+          detail: "Inspekcja każdego detalu. Dokumentacja fotograficzna, gwarancja wykonania.",
         },
       ],
     },
     materials: {
-      eyebrow: "Materialy",
-      title: "Selekcjonowane powierzchnie dla architektonicznej glebi i trwalosci.",
-      body: "Pracujemy z premium betonem dekoracyjnym, kamieniem, mikrocementem i systemami plytek wielkoformatowych.",
-      items: ["Beton", "Kamien naturalny", "Mikrocement", "Plytki wielkoformatowe"],
+      eyebrow: "System techniczny",
+      title: "Materiały kontrolowane i zintegrowane.",
+      body: "Pracujemy z systemami hydroizolacji premium, płytkami wszystkich formatów (XXL włącznie), naturalnymi kamieniami i najlepszymi armaturami/oświetleniem. Każdy element musi grać razem.",
+      items: ["Hydroizolacja", "Płytki XL", "Naturalne kamienie", "Armatura & Oświetlenie"],
     },
     trust: {
       eyebrow: "Zaufanie",
-      title: "Pozycja premium zbudowana na precyzji, powtarzalnosci i rekomendacjach.",
-      body: "LOFTBAU realizuje projekty dla wlascicieli apartamentow, inwestorow i architektow w topowych dzielnicach Krakowa.",
+      title: "Klienci, którzy wiedzą, że wymagają mistrza.",
+      body: "Pracujemy dla właścicieli apartamentów premium, inwestorów wymagających i architektów szukających niezawodnego wykonawcy.",
       stats: [
-        { value: "120+", label: "zrealizowanych remontow premium" },
-        { value: "98%", label: "klientow z polecenia" },
-        { value: "12", label: "lat doswiadczenia high-end" },
+        { value: "150+", label: "łazienek zrealizowanych" },
+        { value: "12", label: "lat na rynku premium" },
+        { value: "98%", label: "klientów z polecenia" },
       ],
       testimonials: [
         {
           quote:
-            "LOFTBAU zmienilo nasze mieszkanie w spokojna, architektoniczna przestrzen. Jakosc wykonania porownywalna z elitarnymi studiami europejskimi.",
-          author: "Inwestor prywatny, Stare Miasto",
+            "LOFTBAU wziął pełną odpowiedzialność za każdy aspekt. Łazienka wygląda jak z hotelowego rezortu.",
+          author: "Inwestor, Wola Justowska",
         },
         {
           quote:
-            "Od detalu po finalne wykonczenie kazda decyzja byla przemyslana. Lazienka daje teraz odczucie butikowego hotelu.",
-          author: "Wlascicielka domu, Wola Justowska",
+            "Precyzja wykonania i odpowiedzialność — dokładnie to, czego szukałem. Mistrz z dużym M.",
+          author: "Właściciel penthouse, Stare Miasto",
         },
       ],
     },
     seo: {
       eyebrow: "Local SEO",
-      title: "Krakowska marka premium od luksusowych remontow i lazienek high-end.",
-      body: "Skupiamy sie na: luxury bathrooms Krakow, premium bathroom renovation Krakow, microcement Krakow, large-format tiles Krakow i luxury interior finishing Krakow.",
+      title: "Master glazurnik Kraków — pełna realizacja łazienek.",
+      body: "Specjalizujemy się w: luxury bathroom execution Krakow, master glazurnik Krakow, premium tiling Krakow, end-to-end bathroom realization Krakow, precision bathroom execution.",
       districts:
-        "Obszar realizacji: Stare Miasto, Wola Justowska, Debniki, Zablocie oraz nowoczesne inwestycje apartamentowe w Krakowie.",
+        "Projekty: Stare Miasto, Wola Justowska, Dębniki, Kazimierz, Żablocie oraz nowoczesne inwestycje premium w całym Krakowie.",
     },
     contact: {
       eyebrow: "Kontakt",
-      title: "Rozpocznij swoj premium remont od prywatnej konsultacji LOFTBAU.",
-      body: "Opisz mieszkanie, harmonogram i oczekiwany poziom wykonczenia. Wrocimy z kuratorem realizacji dopasowanym do Twojej przestrzeni.",
+      title: "Zapytaj mistrza.",
+      body: "Opisz swoją łazienkę, harmonogram i oczekiwania. Wrocimy z konkretnym planem technicznym i wyceną. Konsultacja bezpłatna.",
     },
     structuredDataDescription:
-      "Luksusowe lazienki, mikrocement, plytki wielkoformatowe i premium wykonczenia wnętrz w Krakowie.",
+      "Master glazurnik i pełna realizacja łazienek premium w Krakowie. Wykonawca od A do Z.",
     structuredDataServices: [
-      "Luksusowe wykonczenie lazienek",
-      "Wykonczenie mikrocementem",
-      "Montaż plytek wielkoformatowych",
-      "Premium wykonczenie wnętrz",
+      "Pełna realizacja łazienek premium",
+      "Glazurnictwo precyzyjne",
+      "Systemy hydroizolacji",
+      "Wykończenia na najwyższym poziomie",
     ],
   },
   en: {
     nav: {
       projects: "Projects",
       process: "Process",
-      materials: "Materials",
+      materials: "System",
       contact: "Contact",
       consultation: "Consultation",
     },
@@ -224,122 +271,152 @@ const content: Record<Locale, Content> = {
       en: "ENG",
     },
     hero: {
-      eyebrow: "Luxury interior execution in Krakow",
-      title: "Cinematic Bathrooms. Architectural Finishing. Premium Craft by LOFTBAU Krakow.",
-      body: "We design and deliver luxury bathrooms and high-end surfaces for clients who expect detail precision, elevated materials, and timeless atmosphere.",
-      ctaPrimary: "Book premium consultation",
+      eyebrow: "Master Glazurnik — Kraków",
+      title: "Perfect bathroom execution in reality.",
+      body: "Full responsibility for bathroom realization. From prep, waterproofing, tiling to plumbing integration and finishing. Executor, not designer.",
+      ctaPrimary: "Book consultation",
       ctaSecondary: "Explore portfolio",
       services: [
-        "Luxury bathrooms",
-        "Large-format tile installation",
-        "Microcement surfaces",
-        "Architectural interior finishing",
+        "Master glazurnik",
+        "Premium bathroom systems",
+        "End-to-end execution",
+        "Technical precision",
+      ],
+    },
+    positioning: {
+      eyebrow: "Our mission",
+      title: "We don't design. We execute.",
+      body: "LOFTBAU is an atelier of execution craftsmanship. We take full responsibility for the final physical result. Every bathroom is a technical-aesthetic system, and we control every element from substrate prep to final polish.",
+    },
+    specialization: {
+      eyebrow: "Specialization",
+      title: "Luxury bathroom execution at the highest standard.",
+      body: "Our expertise:",
+      items: [
+        "Premium bathroom realization — A to Z",
+        "Precision tiling (all formats, including XXL)",
+        "Waterproofing and hydraulic systems",
+        "Electrical and plumbing integration",
+        "Spray plastering and spray painting",
+        "Finishing at the highest level",
+      ],
+    },
+    executionSystem: {
+      eyebrow: "Execution system",
+      title: "Bathroom as a technical system.",
+      body: "Every stage matters. We control everything.",
+      steps: [
+        { num: "01", title: "Preparation", desc: "Site assessment, substrate prep, system planning." },
+        { num: "02", title: "Waterproofing", desc: "Full waterproof protection — bathroom safety system." },
+        { num: "03", title: "Tiling", desc: "Precision tile installation — all formats, perfect grout." },
+        { num: "04", title: "Integration", desc: "Equipment, fixtures, lighting, and system integration." },
+        { num: "05", title: "Finishing", desc: "Final detail calibration, cleaning, technical handover." },
       ],
     },
     showcase: {
-      eyebrow: "Premium Showcase",
-      title: "Selected spaces for clients who invest in design quality, not compromise.",
-      body: "Each project combines architectural discipline, tactile materials, and precision installation. The result is calm, luxurious interior performance.",
+      eyebrow: "Projects",
+      title: "Reality. No renders.",
+      body: "Only finished, built bathrooms. Documentation from construction to completion. Proof of execution precision.",
       projectLabel: "Project",
       items: [
         {
-          title: "Penthouse Bathroom",
-          detail: "Italian slab symmetry, hidden linear drains, and gallery-grade lighting.",
+          title: "Penthouse | Large-format system",
+          detail: "1.5m × 2m tiles, concealed grout solution, lighting integration — full system realization.",
         },
         {
-          title: "Signature Microcement",
-          detail: "Seamless mineral skin with tactile matte depth and precise corner transitions.",
+          title: "Residence | Ceramic XXL + Waterproofing",
+          detail: "Advanced waterproofing system, giant tile installation, perfect boundaries and transitions.",
         },
         {
-          title: "Architectural Spa",
-          detail: "Warm stone palette, oversized formats, and bespoke vanity compositions.",
+          title: "Apartment | Precision tiling system",
+          detail: "Natural stone, precise grout joints, floor heating integration.",
         },
       ],
     },
     beforeAfter: {
       eyebrow: "Before / After",
-      title: "Measured transformation with restrained, elegant contrast.",
-      body: "A controlled comparison of spatial quality before and after our premium renovation approach.",
-      beforeLabel: "Fragmented layout, visual noise, and low material consistency.",
-      afterLabel: "Monolithic geometry, tactile harmony, and hotel-grade detailing.",
+      title: "The difference between amateur and master.",
+      body: "Execution quality changes everything. Perfect grout, precise tiles, system integration — you can see it.",
+      beforeLabel: "Careless transitions, asymmetric grout, visible defects.",
+      afterLabel: "Monolithic precision, perfect lines, resort standard.",
       beforeBadge: "Before",
       afterBadge: "After",
       ariaLabel: "Before and after comparison",
     },
     process: {
-      eyebrow: "Client Journey",
-      title: "A studio-level process from first brief to final reveal.",
+      eyebrow: "Client journey",
+      title: "From consultation to handover — full control.",
       body: "Transparent milestones, disciplined execution, and direct communication throughout the project.",
       items: [
         {
           step: "01",
-          title: "Spatial Brief",
-          detail: "Design goals, materials, light logic, and budget precision.",
+          title: "Technical consultation",
+          detail: "Site assessment, system specification, timeline, precise budget.",
         },
         {
           step: "02",
-          title: "Technical Alignment",
-          detail: "Measurement pass, detailing package, and timeline architecture.",
+          title: "Measurement and planning",
+          detail: "Precision measurements, waterproofing plan, material spec, execution timeline.",
         },
         {
           step: "03",
-          title: "Premium Execution",
-          detail: "Meticulous site delivery with architectural supervision standards.",
+          title: "Execution and supervision",
+          detail: "Every stage controlled. Waterproofing, tiling, installation — master standard.",
         },
         {
           step: "04",
-          title: "Final Curation",
-          detail: "Quality walkthrough, finishing calibration, and handover ritual.",
+          title: "Handover and documentation",
+          detail: "Inspection of every detail. Photo documentation, execution warranty.",
         },
       ],
     },
     materials: {
-      eyebrow: "Materials",
-      title: "Curated surfaces for architectural depth and long-term performance.",
-      body: "We work with premium concrete effects, stone textures, microcement, and large-format tile systems.",
-      items: ["Concrete", "Natural Stone", "Microcement", "Large-Format Tiles"],
+      eyebrow: "Technical system",
+      title: "Materials controlled and integrated.",
+      body: "We work with premium waterproofing systems, tiles in all formats (XXL included), natural stones, and the finest fixtures/lighting. Every element must work together.",
+      items: ["Waterproofing", "XL Tiles", "Natural Stone", "Fixtures & Lighting"],
     },
     trust: {
       eyebrow: "Trust",
-      title: "Premium positioning built on precision, consistency, and referrals.",
-      body: "LOFTBAU serves apartment owners, investors, and architects in Krakow's top districts.",
+      title: "Clients who know they need a master.",
+      body: "We work for premium apartment owners, investors with high standards, and architects seeking a reliable executor.",
       stats: [
-        { value: "120+", label: "premium renovations delivered" },
-        { value: "98%", label: "clients from recommendation" },
-        { value: "12", label: "years of high-end execution" },
+        { value: "150+", label: "bathrooms realized" },
+        { value: "12", label: "years in premium market" },
+        { value: "98%", label: "clients from referral" },
       ],
       testimonials: [
         {
           quote:
-            "LOFTBAU transformed our apartment into a calm, architectural space. Execution quality felt on par with elite European studios.",
-          author: "Private Investor, Krakow Old Town",
+            "LOFTBAU took full responsibility for every aspect. The bathroom looks like a resort.",
+          author: "Investor, Wola Justowska",
         },
         {
           quote:
-            "From detailing to finish, every decision was intentional. The bathroom now feels like a boutique hotel suite.",
-          author: "Homeowner, Wola Justowska",
+            "Precision execution and accountability — exactly what I was looking for. Master with capital M.",
+          author: "Penthouse owner, Stare Miasto",
         },
       ],
     },
     seo: {
       eyebrow: "Local SEO",
-      title: "Krakow authority for luxury renovation and premium bathroom execution.",
-      body: "We focus on luxury bathrooms Krakow, premium bathroom renovation Krakow, microcement Krakow, large-format tiles Krakow, and luxury interior finishing Krakow.",
+      title: "Master glazurnik Krakow — full bathroom realization.",
+      body: "We specialize in: luxury bathroom execution Krakow, master glazurnik Krakow, premium tiling Krakow, end-to-end bathroom realization Krakow, precision bathroom execution.",
       districts:
-        "District focus: Stare Miasto, Wola Justowska, Debniki, Zablocie, and modern investment apartments across Krakow.",
+        "Projects: Stare Miasto, Wola Justowska, Dębniki, Kazimierz, Żablocie, and premium investment apartments across Krakow.",
     },
     contact: {
       eyebrow: "Contact",
-      title: "Start your premium renovation journey with a private LOFTBAU consultation.",
-      body: "Share your apartment, timeline, and expected finish level. We will return with a curated execution path tailored to your space.",
+      title: "Ask the master.",
+      body: "Describe your bathroom, timeline, and expectations. We'll return with a concrete technical plan and quote. Free consultation.",
     },
     structuredDataDescription:
-      "Luxury bathrooms, microcement, large-format tiles, and premium interior finishing in Krakow.",
+      "Master glazurnik and full premium bathroom realization in Krakow. Executor A to Z.",
     structuredDataServices: [
-      "Luxury bathroom renovation",
-      "Microcement finishing",
-      "Large-format tile installation",
-      "Premium interior finishing",
+      "Full premium bathroom realization",
+      "Precision tiling",
+      "Waterproofing systems",
+      "Finishing at the highest level",
     ],
   },
 };
@@ -467,8 +544,73 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
         </motion.section>
 
         <motion.section
-          id="showcase"
           className="mt-20 space-y-12"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div variants={item}>
+            <SectionTitle
+              eyebrow={t.positioning.eyebrow}
+              title={t.positioning.title}
+              body={t.positioning.body}
+            />
+          </motion.div>
+        </motion.section>
+
+        <motion.section
+          className="mt-20 space-y-12"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div variants={item}>
+            <SectionTitle
+              eyebrow={t.specialization.eyebrow}
+              title={t.specialization.title}
+              body={t.specialization.body}
+            />
+            <motion.ul variants={item} className="mt-6 max-w-2xl space-y-2">
+              {t.specialization.items.map((listItem) => (
+                <li key={listItem} className="flex items-start gap-3">
+                  <span className="text-[var(--muted)]">→</span>
+                  <span className="text-sm text-white/75">{listItem}</span>
+                </li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        </motion.section>
+
+        <motion.section
+          className="mt-20 space-y-12"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div variants={item}>
+            <SectionTitle
+              eyebrow={t.executionSystem.eyebrow}
+              title={t.executionSystem.title}
+              body={t.executionSystem.body}
+            />
+          </motion.div>
+          <motion.div variants={item} className="grid gap-5 md:grid-cols-5">
+            {t.executionSystem.steps.map((step) => (
+              <article key={step.num} className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+                <p className="headline text-xs tracking-[0.2em] text-[var(--muted)]">{step.num}</p>
+                <h3 className="headline mt-3 text-lg">{step.title}</h3>
+                <p className="mt-2 text-xs leading-5 text-white/70">{step.desc}</p>
+              </article>
+            ))}
+          </motion.div>
+        </motion.section>
+
+        <motion.section
+          id="showcase"
+          className="mt-24 space-y-12"
           variants={container}
           initial="hidden"
           whileInView="show"
