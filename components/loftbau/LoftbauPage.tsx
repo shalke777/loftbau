@@ -162,14 +162,17 @@ const content: Record<Locale, Content> = {
         {
           title: "Łazienka — apartament, Kraków",
           detail: "Płytki wielkoformatowe, prysznic walk-in, ogrzewanie podłogowe, pełny zakres instalacji.",
+          image: "/realizacja-1.jpg",
         },
         {
           title: "Łazienka — dom jednorodzinny",
           detail: "Kamień naturalny na ścianach, wanna wolnostojąca, oświetlenie podtynkowe.",
+          image: "/realizacja-2.jpg",
         },
         {
           title: "Łazienka — mieszkanie deweloperskie",
           detail: "Stan deweloperski do odbioru. Glazura, instalacje wod-kan i elektryczne, malowanie.",
+          image: "/realizacja-3.jpg",
         },
       ],
     },
@@ -323,14 +326,17 @@ const content: Record<Locale, Content> = {
         {
           title: "Bathroom — apartment, Kraków",
           detail: "Large-format tiles, walk-in shower, underfloor heating, full installation scope.",
+          image: "/realizacja-1.jpg",
         },
         {
           title: "Bathroom — single-family house",
           detail: "Natural stone walls, freestanding bathtub, recessed lighting.",
+          image: "/realizacja-2.jpg",
         },
         {
           title: "Bathroom — developer-condition flat",
           detail: "From shell to handover. Tiling, plumbing, electrical, spray painting.",
+          image: "/realizacja-3.jpg",
         },
       ],
     },
@@ -674,6 +680,8 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
               beforeBadge={t.beforeAfter.beforeBadge}
               afterBadge={t.beforeAfter.afterBadge}
               ariaLabel={t.beforeAfter.ariaLabel}
+              beforeSrc="/przed.jpg"
+              afterSrc="/po.JPG"
             />
           </motion.div>
         </motion.section>
