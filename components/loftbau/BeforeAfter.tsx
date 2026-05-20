@@ -6,9 +6,18 @@ import { motion } from "framer-motion";
 type BeforeAfterProps = {
   beforeLabel: string;
   afterLabel: string;
+  beforeBadge: string;
+  afterBadge: string;
+  ariaLabel: string;
 };
 
-export default function BeforeAfter({ beforeLabel, afterLabel }: BeforeAfterProps) {
+export default function BeforeAfter({
+  beforeLabel,
+  afterLabel,
+  beforeBadge,
+  afterBadge,
+  ariaLabel,
+}: BeforeAfterProps) {
   const [slider, setSlider] = useState(56);
 
   const clipPath = useMemo(
@@ -21,7 +30,7 @@ export default function BeforeAfter({ beforeLabel, afterLabel }: BeforeAfterProp
       <div className="relative h-[360px] overflow-hidden rounded-2xl sm:h-[460px]">
         <div className="absolute inset-0 bg-[linear-gradient(130deg,#4f4a43_0%,#2c2d30_50%,#18181a_100%)]" />
         <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/30 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-white/80">
-          Przed
+          {beforeBadge}
         </div>
         <div className="absolute bottom-5 left-4 max-w-[16rem] text-sm text-white/70 sm:text-base">
           {beforeLabel}
@@ -34,7 +43,7 @@ export default function BeforeAfter({ beforeLabel, afterLabel }: BeforeAfterProp
         >
           <div className="absolute inset-0 bg-[linear-gradient(145deg,#d8cbb8_0%,#9f8f79_35%,#4e463f_100%)]" />
           <div className="absolute right-4 top-4 rounded-full border border-black/10 bg-white/70 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-black/75">
-            Po
+            {afterBadge}
           </div>
           <div className="absolute bottom-5 right-4 max-w-[16rem] text-right text-sm text-black/70 sm:text-base">
             {afterLabel}
@@ -57,7 +66,7 @@ export default function BeforeAfter({ beforeLabel, afterLabel }: BeforeAfterProp
           max={92}
           value={slider}
           onChange={(event) => setSlider(Number(event.target.value))}
-          aria-label="Porownanie przed i po"
+          aria-label={ariaLabel}
         />
       </div>
     </div>
