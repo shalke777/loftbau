@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import BeforeAfter from "./BeforeAfter";
@@ -50,7 +51,7 @@ type Content = {
     title: string;
     body: string;
     projectLabel: string;
-    items: { title: string; detail: string }[];
+    items: { title: string; detail: string; image?: string }[];
   };
   beforeAfter: {
     eyebrow: string;
@@ -627,15 +628,26 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
             {t.showcase.items.map((project, index) => (
               <article
                 key={project.title}
-                className={`rounded-3xl border border-white/10 p-6 ${
+                className={`relative overflow-hidden rounded-3xl border border-white/10 ${
                   index === 0 ? "md:col-span-7 min-h-[330px]" : "md:col-span-5 min-h-[250px]"
                 } bg-[linear-gradient(135deg,#1f2023_0%,#141416_70%)]`}
               >
-                <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--muted)]">
-                  {t.showcase.projectLabel} {index + 1}
-                </p>
-                <h3 className="headline mt-5 text-2xl sm:text-3xl">{project.title}</h3>
-                <p className="mt-4 max-w-md text-sm leading-7 text-white/70 sm:text-base">{project.detail}</p>
+                {project.image && (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover opacity-60"
+                    sizes="(max-width: 768px) 100vw, 60vw"
+                  />
+                )}
+                <div className="relative z-10 flex h-full flex-col justify-end p-6">
+                  <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--muted)]">
+                    {t.showcase.projectLabel} {index + 1}
+                  </p>
+                  <h3 className="headline mt-5 text-2xl sm:text-3xl">{project.title}</h3>
+                  <p className="mt-4 max-w-md text-sm leading-7 text-white/70 sm:text-base">{project.detail}</p>
+                </div>
               </article>
             ))}
           </motion.div>
@@ -662,6 +674,8 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
               beforeBadge={t.beforeAfter.beforeBadge}
               afterBadge={t.beforeAfter.afterBadge}
               ariaLabel={t.beforeAfter.ariaLabel}
+              beforeSrc="/images/przed.jpg"
+              afterSrc="/images/po.jpg"
             />
           </motion.div>
         </motion.section>

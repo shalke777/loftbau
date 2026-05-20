@@ -1,0 +1,19 @@
+Wrzuć tutaj swoje zdjęcia według nazw:
+
+REALIZACJE (sekcja "Realizacje"):
+  realizacja-1.jpg  — pierwsze zdjęcie (duża karta)
+  realizacja-2.jpg  — drugie zdjęcie
+  realizacja-3.jpg  — trzecie zdjęcie
+
+PRZED / PO (suwak):
+  przed.jpg         — zdjęcie przed pracami
+  po.jpg            — zdjęcie po zakończeniu
+
+Zalecane formaty:
+  - JPG lub WEBP
+  - Proporcje poziome (landscape), np. 1200x800 px
+  - Rozmiar pliku: do 2 MB każde
+
+Po wrzuceniu zdjęć:
+  git add -A && git commit -m "feat: dodano zdjecia realizacji" && git push
+  npx vercel --prod --yes

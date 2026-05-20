@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -9,6 +10,8 @@ type BeforeAfterProps = {
   beforeBadge: string;
   afterBadge: string;
   ariaLabel: string;
+  beforeSrc?: string;
+  afterSrc?: string;
 };
 
 export default function BeforeAfter({
@@ -17,6 +20,8 @@ export default function BeforeAfter({
   beforeBadge,
   afterBadge,
   ariaLabel,
+  beforeSrc,
+  afterSrc,
 }: BeforeAfterProps) {
   const [slider, setSlider] = useState(56);
 
@@ -28,7 +33,12 @@ export default function BeforeAfter({
   return (
     <div className="relative overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--surface)] p-3 sm:p-4">
       <div className="relative h-[360px] overflow-hidden rounded-2xl sm:h-[460px]">
-        <div className="absolute inset-0 bg-[linear-gradient(130deg,#4f4a43_0%,#2c2d30_50%,#18181a_100%)]" />
+        {/* Tło "przed" */}
+        {beforeSrc ? (
+          <Image src={beforeSrc} alt={beforeBadge} fill className="object-cover" sizes="100vw" />
+        ) : (
+          <div className="absolute inset-0 bg-[linear-gradient(130deg,#4f4a43_0%,#2c2d30_50%,#18181a_100%)]" />
+        )}
         <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/30 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-white/80">
           {beforeBadge}
         </div>
@@ -41,7 +51,12 @@ export default function BeforeAfter({
           style={{ clipPath }}
           transition={{ type: "spring", stiffness: 180, damping: 24 }}
         >
-          <div className="absolute inset-0 bg-[linear-gradient(145deg,#d8cbb8_0%,#9f8f79_35%,#4e463f_100%)]" />
+          {/* Tło "po" */}
+          {afterSrc ? (
+            <Image src={afterSrc} alt={afterBadge} fill className="object-cover" sizes="100vw" />
+          ) : (
+            <div className="absolute inset-0 bg-[linear-gradient(145deg,#d8cbb8_0%,#9f8f79_35%,#4e463f_100%)]" />
+          )}
           <div className="absolute right-4 top-4 rounded-full border border-black/10 bg-white/70 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-black/75">
             {afterBadge}
           </div>
