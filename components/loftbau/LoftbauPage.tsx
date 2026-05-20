@@ -442,13 +442,13 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeCurve } },
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeCurve } },
 };
 
 function SectionTitle({ eyebrow, title, body }: { eyebrow: string; title: string; body: string }) {
@@ -466,7 +466,7 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
   const isPl = locale === "pl";
 
   return (
-    <div className="noise min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-black/20 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
           <a className="headline text-sm tracking-[0.3em] text-[var(--foreground)]" href="#hero">
@@ -519,24 +519,15 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
         >
           {/* Zdjęcie tła */}
           <Image
-            src="/realizacja-4.jpg"
+            src="/11.jpg"
             fill
             priority
             className="object-cover opacity-100"
             sizes="100vw"
             alt=""
           />
-          {/* Gradient overlay */}
+          {/* Gradient overlay góra→dół */}
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(10,10,11,0.6)_60%,rgba(10,10,11,0.97)_100%)]" />
-          {/* Warm accent top-right */}
-          <div className="absolute right-0 top-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(216,203,184,0.18)_0%,transparent_65%)]" />
-          {/* Warm glow bottom-left */}
-          <div className="absolute -bottom-20 -left-20 h-[350px] w-[350px] rounded-full bg-[radial-gradient(circle,rgba(180,155,110,0.12)_0%,transparent_65%)]" />
-          <motion.div
-            className="absolute -right-16 top-20 h-56 w-56 rounded-full border border-white/15 bg-white/5 blur-2xl"
-            animate={{ y: [0, -14, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          />
           <motion.div variants={container} initial="hidden" animate="show" className="relative z-10 max-w-4xl space-y-8">
             <motion.p variants={item} className="text-[11px] uppercase tracking-[0.32em] text-[var(--muted)]">
               {t.hero.eyebrow}

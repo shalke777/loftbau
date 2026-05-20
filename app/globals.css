@@ -11,8 +11,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-manrope);
-  --font-mono: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
 }
 
 * {
@@ -24,12 +23,9 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(1200px 700px at 80% -10%, #222227 0%, transparent 55%),
-    radial-gradient(900px 600px at -10% 10%, #1a1a1e 0%, transparent 60%),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   letter-spacing: 0.01em;
 }
 
@@ -39,19 +35,7 @@ body {
 }
 
 .headline {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 600;
   letter-spacing: -0.02em;
-}
-
-.noise {
-  position: relative;
-}
-
-.noise::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 0.6px, transparent 0.6px);
-  background-size: 2px 2px;
-  pointer-events: none;
 }
