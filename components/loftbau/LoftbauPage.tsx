@@ -674,8 +674,6 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
               beforeBadge={t.beforeAfter.beforeBadge}
               afterBadge={t.beforeAfter.afterBadge}
               ariaLabel={t.beforeAfter.ariaLabel}
-              beforeSrc="/images/przed.jpg"
-              afterSrc="/images/po.jpg"
             />
           </motion.div>
         </motion.section>
