@@ -181,7 +181,7 @@ export default function Home() {
                 key={material}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm tracking-[0.13em] text-[#d6ccba] uppercase"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm tracking-[0.13em] text-[#d6ccba]"
               >
                 {material}
               </motion.div>
@@ -213,9 +213,8 @@ export default function Home() {
           </motion.h2>
           <p className="mt-6 max-w-3xl text-sm leading-relaxed text-[#c8bead] md:text-base">
             Obsługujemy inwestycje w dzielnicach premium Krakowa: Stare Miasto, Wola Justowska,
-            Grzegórzki i Dębniki. Specjalizujemy się w usługach: luxury bathrooms Kraków, premium bathroom
-            renovation Kraków, microcement Kraków, large-format tiles Kraków i luxury interior finishing
-            Kraków.
+            Grzegórzki i Dębniki. Realizujemy luksusowe łazienki, premium bathroom renovation,
+            mikrocement i płytki wielkoformatowe oraz kompleksowe luxury interior finishing w Krakowie.
           </p>
         </section>
 
