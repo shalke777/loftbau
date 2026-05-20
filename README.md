@@ -1,2 +1,1 @@
-# loftbau
-LOFTBAU Kraków — nowoczesna marka premium specjalizująca się w luksusowych łazienkach, płytkach wielkoformatowych i wykończeniach wnętrz. Strona inspirowana architekturą premium, minimalizmem oraz cinematic designem. Next.js + Tailwind + Framer Motion + lokalne SEO Kraków.
+LOFTBAU Kraków — premium wykonawca kompleksowych łazienek i glazurnictwa najwyższej klasy. Specjalizacja: wszystkie formaty płytek, precyzyjne wykończenia, hydraulika i elektryka w ramach realizacji. Dodatkowo gładzie oraz malowanie natryskowe. Nowoczesne realizacje premium w Krakowie i okolicach.
