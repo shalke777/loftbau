@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #121212;
+  --foreground: #f6f2ea;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Inter, Manrope, system-ui, sans-serif;
+  --font-mono: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, #1d1d1d 0%, #121212 55%, #0c0c0c 100%);
+  color: var(--foreground);
+  font-family: Inter, Manrope, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: "Space Grotesk", Manrope, Inter, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: #d5cbb5;
+  color: #121212;
+}
