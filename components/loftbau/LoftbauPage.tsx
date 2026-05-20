@@ -522,12 +522,12 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
             src="/realizacja-4.jpg"
             fill
             priority
-            className="object-cover opacity-55"
+            className="object-cover opacity-100"
             sizes="100vw"
             alt=""
           />
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(165deg,rgba(15,15,16,0.6)_0%,rgba(12,12,13,0.45)_50%,rgba(10,10,11,0.72)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(10,10,11,0.6)_60%,rgba(10,10,11,0.97)_100%)]" />
           {/* Warm accent top-right */}
           <div className="absolute right-0 top-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(216,203,184,0.18)_0%,transparent_65%)]" />
           {/* Warm glow bottom-left */}
