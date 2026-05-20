@@ -19,20 +19,20 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://loftbau-krakow.pl"),
-  title: "LOFTBAU Krakow | Luxury Bathrooms & Premium Interior Finishing",
+  title: "LOFTBAU Kraków | Wykonawca łazienek — Paweł Szalecki",
   description:
-    "LOFTBAU Krakow delivers luxury bathroom renovation, microcement finishes, large-format tiles, and premium interior execution for high-end apartments and homes.",
+    "LOFTBAU Paweł Szalecki — firma wykonawcza specjalizująca się w kompleksowym wykonaniu łazienek. Mistrz glazurnik. Kraków i okolice.",
   keywords: [
-    "luxury bathrooms Krakow",
-    "premium bathroom renovation Krakow",
-    "microcement Krakow",
-    "large-format tiles Krakow",
-    "luxury interior finishing Krakow",
+    "wykonawca łazienek Kraków",
+    "glazurnictwo Kraków",
+    "płytki wielkoformatowe Kraków",
+    "hydroizolacja łazienki Kraków",
+    "mistrz glazurnik Kraków",
   ],
   openGraph: {
-    title: "LOFTBAU Krakow",
+    title: "LOFTBAU Kraków",
     description:
-      "A cinematic premium renovation brand for architectural interiors in Krakow.",
+      "Firma wykonawcza specjalizująca się w łazienkach. Mistrz glazurnik. Kraków i okolice.",
     type: "website",
     locale: "pl_PL",
   },
