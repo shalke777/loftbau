@@ -35,7 +35,7 @@ body {
 }
 
 .headline {
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-satoshi), sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em;
 }

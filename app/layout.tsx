@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,9 +8,14 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
+const satoshi = localFont({
+  src: [
+    { path: "../public/fonts/satoshi-400.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/satoshi-500.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/satoshi-700.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-satoshi",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className={`${inter.variable} ${satoshi.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
