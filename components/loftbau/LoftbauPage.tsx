@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import BeforeAfter from "./BeforeAfter";
 
@@ -38,7 +39,7 @@ type Content = {
     eyebrow: string;
     title: string;
     body: string;
-    items: string[];
+    items: { title: string; desc: string }[];
   };
   executionSystem: {
     eyebrow: string;
@@ -133,12 +134,30 @@ const content: Record<Locale, Content> = {
       title: "Co wykonujemy.",
       body: "Pełny zakres prac łazienkowych:",
       items: [
-        "Kompleksowe wykonanie łazienek",
-        "Glazurnictwo, w tym płytki wielkoformatowe",
-        "Instalacje wod-kan w obrębie łazienki",
-        "Instalacje elektryczne w obrębie łazienki",
-        "Gładzie natryskowe",
-        "Malowanie natryskowe",
+        {
+          title: "Kompleksowe wykonanie łazienek",
+          desc: "Realizujemy łazienki pod klucz od stanu surowego do odbioru technicznego. Zakres obejmuje hydroizolację, glazurę, instalacje wod-kan i elektryczne, wykończenie oraz montaż armatury premium w Krakowie i okolicach.",
+        },
+        {
+          title: "Glazurnictwo i płytki wielkoformatowe",
+          desc: "Montaż gresu rektyfikowanego, spieków kwarcowych i płyt 120×280. Precyzyjna obróbka narożników, estetyczne fugowanie i zachowanie idealnych płaszczyzn — standard każdej realizacji premium.",
+        },
+        {
+          title: "Instalacje wod-kan w obrębie łazienki",
+          desc: "Zmiana i rozprowadzenie pionów, podejścia pod armaturę premium, montaż odpływów liniowych i systemów podtynkowych Geberit. Profesjonalna hydroizolacja podłogi i ścian w strefach mokrych i kabinach walk-in.",
+        },
+        {
+          title: "Instalacje elektryczne w obrębie łazienki",
+          desc: "Instalacje pod oświetlenie podtynkowe LED, gniazda IP44, ogrzewanie podłogowe elektryczne i sterowanie oświetleniem strefowym. Prace wykonywane zgodnie z normami dla stref mokrych.",
+        },
+        {
+          title: "Gładzie natryskowe",
+          desc: "Maszynowe gładzie natryskowe zapewniające idealnie równe płaszczyzny pod glazurę lub malowanie. Precyzyjne przygotowanie podłoża to podstawa trwałości każdej nowoczesnej łazienki premium.",
+        },
+        {
+          title: "Malowanie natryskowe",
+          desc: "Natrysk maszynowy farbami do stref wilgotnych — równomierne krycie, gładka faktura bez śladów wałka. Stosujemy materiały odporne na parę i wilgoć, dopuszczone do stosowania w łazienkach.",
+        },
       ],
     },
     executionSystem: {
@@ -302,12 +321,30 @@ const content: Record<Locale, Content> = {
       title: "What we do.",
       body: "Full scope of bathroom works:",
       items: [
-        "Full bathroom builds",
-        "Tiling, including large-format slabs",
-        "Plumbing inside the bathroom scope",
-        "Electrical inside the bathroom scope",
-        "Spray plastering",
-        "Spray painting",
+        {
+          title: "Full bathroom builds",
+          desc: "We deliver complete bathrooms from shell condition to technical handover. Scope covers waterproofing, tiling, plumbing, electrical, finishing and premium fixture installation across Kraków and nearby.",
+        },
+        {
+          title: "Tiling, including large-format slabs",
+          desc: "Installation of rectified tiles, quartz composites and large-format slabs up to 120×280. Precise corner cuts, tight grout lines and flat planes are the standard on every premium build.",
+        },
+        {
+          title: "Plumbing inside the bathroom scope",
+          desc: "Supply re-routing, connections for premium fixtures, linear drains and concealed Geberit systems. Professional waterproofing of floors and walls in wet zones and walk-in shower enclosures.",
+        },
+        {
+          title: "Electrical inside the bathroom scope",
+          desc: "Installations for recessed LED lighting, IP44 sockets, electric underfloor heating and zone lighting control. All work carried out to wet-room electrical standards.",
+        },
+        {
+          title: "Spray plastering",
+          desc: "Machine spray plastering produces perfectly flat surfaces for tiling or painting. Precise substrate preparation is the foundation of long-term durability in any modern premium bathroom.",
+        },
+        {
+          title: "Spray painting",
+          desc: "Machine spray application using moisture-resistant paints rated for bathroom use — even coverage, smooth finish, no roller marks. Materials tested for steam and humidity resistance.",
+        },
       ],
     },
     executionSystem: {
@@ -465,6 +502,8 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
   const t = content[locale];
   const isPl = locale === "pl";
 
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-black/20 backdrop-blur-xl">
@@ -594,14 +633,41 @@ export default function LoftbauPage({ locale = "pl" }: { locale?: Locale }) {
               title={t.specialization.title}
               body={t.specialization.body}
             />
-            <motion.ul variants={item} className="mt-6 max-w-2xl space-y-2">
-              {t.specialization.items.map((listItem) => (
-                <li key={listItem} className="flex items-start gap-3">
-                  <span className="text-[var(--muted)]">→</span>
-                  <span className="text-sm text-white/75">{listItem}</span>
-                </li>
+            <motion.div variants={item} className="mt-8 max-w-2xl divide-y divide-white/[0.08]">
+              {t.specialization.items.map((svcItem, idx) => (
+                <div key={svcItem.title}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                    className="flex w-full items-center justify-between py-5 text-left"
+                    aria-expanded={openIndex === idx}
+                  >
+                    <h3 className="headline text-base text-[var(--foreground)]">{svcItem.title}</h3>
+                    <span
+                      className="ml-4 shrink-0 text-lg text-[var(--muted)] transition-transform duration-300"
+                      style={{ transform: openIndex === idx ? "rotate(45deg)" : "none" }}
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  </button>
+                  <AnimatePresence>
+                    {openIndex === idx && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pb-5 text-sm leading-7 text-white/60">{svcItem.desc}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               ))}
-            </motion.ul>
+            </motion.div>
           </motion.div>
         </motion.section>
 
